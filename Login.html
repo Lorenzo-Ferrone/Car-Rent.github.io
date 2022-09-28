@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="icon" type="image/x-icon" href="https://c8.alamy.com/comp/2G16250/car-logo-2G16250.jpg">
+
+	<style type="text/css">
+		body, html{
+			height: 100%;
+			margin: 0;
+			font-family: sans-serif;
+		}
+		::-webkit-scrollbar{
+			width: 10px;
+		}
+		::-webkit-scrollbar-track{
+			box-shadow: inset 0 6px lightgrey;
+			border-radius: 10px;
+
+		}
+		::-webkit-scrollbar-thumb {
+			background-color: grey;
+			border-radius: 10px;
+		}
+		::-webkit-scrollbar-thumb:hover{
+			background-color: darkgray;
+		}
+		.bg-image{
+			height: 18%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 300px;
+
+
+		}
+		.img1 {background-image: url(https://c8.alamy.com/comp/2G16250/car-logo-2G16250.jpg);}
+
+
+		.bg-text{
+			background-color: whitesmokes;
+			color: black;
+
+			font-size: 20px;
+			font-weight: bold;
+			border: 3px solid darkgray;
+			border-radius: 7px;
+
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 41%;
+			position: fixed;
+
+			width: 280px;
+			padding: 80px;
+			text-align: center;
+
+		}
+		.bg-text2{
+			font-size: 17px;
+			position: fixed;
+			text-align: left;
+			top: 92%;
+			left: 65%;
+		}
+		.bg-text3{
+			background-color: white;
+			color: black;
+
+			font-size: 20px;
+			font-weight: bold;
+
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 77%;
+			position: fixed;
+			width: 410px;
+			padding: 16px;
+			text-align: center;
+		}
+		.bg-text4{
+			position: fixed;
+			top: 0%;
+			left: 0%;
+		}
+		#rg-text{
+			background-color: whitesmokes;
+			color: black;
+
+			font-size: 20px;
+			font-weight: bold;
+			border: 3px solid darkgray;
+			border-radius: 7px;
+
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 45%;
+			position: fixed;
+
+			width: 459px;
+			padding: 70px;
+			text-align: center;
+
+			visibility: hidden;
+
+		}
+		input{
+			border: 2px solid lightgrey;
+			margin: 2px;
+			border-radius: 7px;
+			font-size: 85%;
+		}
+		button : hover{
+			opacity: 0.2;
+			background-color: lightgrey;
+		}
+		#btn{
+			cursor: pointer;
+			width: 78%;	
+			padding: 2px;	
+		}
+		#link :hover {
+			opacity: 0.7;
+		}
+		#backbtn{
+			left: 1%;
+			cursor: pointer;
+		}
+		#backbtn2{
+			position: absolute;
+			top: 89.8%;
+			left: 0.6%;
+			cursor: pointer;
+			font-size: 18px;
+
+		}
+		#rme{
+			font-size: 4px;
+		}
+		#Fname, #Lname, #Bdate{
+			margin: 8px;
+		}
+		#sntxt{
+			visibility: visible;
+		}
+		#rgtxt{
+			position: absolute;
+			top: 5%;
+			left: 43%;
+		}
+		#logo{
+			position: relative;
+			top: 0%;
+		}
+		#Rbtn{
+			margin: 8px;
+			width: 300px;
+			cursor: pointer;
+		}
+
+
+	</style>	
+
+</head>
+<body>
+
+	<div class="bg-image img1" id="logo"></div>
+	
+	<div id="sntxt">
+	<div class="bg-text">
+		<div>Sign-in</div><br>
+		<form autocomplete="off" method="path" action="http://127.0.1:5000">
+			<input type="text" name="uname" placeholder="Username" required><br>
+			<input type="password" name="psw" placeholder="Password" required><br>
+			<input type="checkbox" id="rme">Remember me
+			<button type="submit" id="btn">Login</button><br>
+		</form>
+		<br><br>
+		<div class="bg-text2">
+		<a href="Forgot password" id="link">forgot password?</a>
+		<button class="bg-text2" id="backbtn" onclick="home()">Back</button>
+		</div>
+		</div>
+		<div class="bg-text3"> 
+		
+		<br><br><div class="bg-text4">New buyer?</div>
+		<button id='btn' onclick="Register()">Create a new account</button>
+
+		</div>
+	</div>
+
+	<div id="rg-text">
+		<form>
+			<p id='rgtxt'>Register</p>
+		First Name<input type="text" id="Fname" placeholder="First Name" required><br>
+		Last Name<input type="text" id="Lname" placeholder="Last Name" required><br>
+		Password<input type="password" name="psw1" placeholder="Password" required><br>
+		Confirm<input type="password" name="psw2" placeholder="Confirm Password" required><br>
+		<button type="submit" id="Rbtn">Register</button>
+	</form>
+	<button id="backbtn2" onclick="B_Register()">Back</button>
+		
+	</div>
+	<script>
+
+		let rg = document.getElementById('rg-text');
+		let sn = document.getElementById('sntxt');
+		let logo = document.getElementById('logo');
+
+		function home(){
+
+			window.location.href = 'http://127.0.0.1:5000'
+		}
+		function Register(){
+
+			rg.style.visibility = 'visible'
+			sn.style.visibility = 'hidden'
+			logo.style.top = '6.89%'
+
+		}
+		function B_Register(){
+
+			rg.style.visibility = 'hidden'
+			sn.style.visibility = 'visible'
+			logo.style.top = '0%'
+		}
+
+
+
+	</script>
+
+</body>
+
+
+
+</html>
