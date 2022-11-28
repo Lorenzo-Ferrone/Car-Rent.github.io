@@ -59,7 +59,7 @@
   .img5 {background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2634-genesisunveilsg90exteriorimages-1638281750.jpg);}
 
 
-  .bg-text{
+  #bg-text{
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
     font-size: 15%;
@@ -73,6 +73,7 @@
     padding: 2%;
     z-index: 2%;
     text-align: right;
+    display: block;
   }
   .bg-text2{
     font-size: 290%;
@@ -104,9 +105,9 @@
   }
   .image{
     max-height: 700px;
-    max-width: 700px;
-    min-height: 300px;
-    max-width: 400px;
+    min-height: 400px;
+    max-width: 600px;
+    min-width: 500px;
     cursor: pointer;
   }
   .image3 {
@@ -314,7 +315,7 @@
 
 
 <body>
-  <div class="bg-text">
+  <div id="bg-text">
 
     <img class="image3" id='logobtn'src="https://c8.alamy.com/comp/2G16250/car-logo-2G16250.jpg" onclick="window.location.href=window.location.href"><br>
 
@@ -523,6 +524,7 @@
     let rent4 = document.getElementById("rent4");
     let rent5 = document.getElementById("rent5");
     let sn = document.getElementById("snbtn")
+    let bgtxt = document.getElementById("bg-text")
 
 
     window.onscroll = function() {scrollFunction()};
@@ -530,12 +532,13 @@
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
+        bgtxt.style.display = "none";
 
       } else {
         mybutton.style.display = "none";
+        bgtxt.style.display = "block";
       }
     }
-
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
